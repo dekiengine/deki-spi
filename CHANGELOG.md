@@ -16,4 +16,5 @@ alongside one that has them.
   starts a bus from the boot scene. A transfer has optional command and
   address phases, one, two or four data lines, a data/command pin level and a
   chip select that can stay asserted into the next transfer; long writes are
-  queued for DMA and waited for.
+  queued for DMA and waited for. A queued transfer of four bytes or less is
+  copied, so a command can be queued from the stack.

@@ -79,10 +79,11 @@ public:
 
     /// Queues `t` and returns once it is queued; it goes out by DMA after the
     /// transfers queued before it. `t.tx` must stay valid and unchanged until
-    /// Wait says the transfer is done. A buffer outside DMA-capable memory
-    /// works, but the platform's driver may copy it first. Blocks while the
-    /// queue is full. False when the transfer is longer than
-    /// GetMaxTransferBytes, or cannot be queued.
+    /// Wait says the transfer is done, unless it is 4 bytes or less: those
+    /// are copied, so a command and its parameters can be queued from the
+    /// stack. A buffer outside DMA-capable memory works, but the platform's
+    /// driver may copy it first. Blocks while the queue is full. False when
+    /// the transfer is longer than GetMaxTransferBytes, or cannot be queued.
     virtual bool Queue(const Transfer& t) = 0;
 
     /// Waits until no more than `leaveInFlight` queued transfers are still
