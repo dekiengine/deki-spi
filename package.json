@@ -1,0 +1,9 @@
+{
+  "id": "deki-spi",
+  "displayName": "SPI",
+  "minEngine": "0.18.0",
+  "buildDefine": "DEKI_PACKAGE_SPI",
+  "requires": [],
+  "features": [],
+  "dependencies": {}
+}
