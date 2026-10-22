@@ -1,0 +1,19 @@
+{
+    "GPIO carrying data in (MISO); IO1 on a quad bus. -1 when nothing on the bus is read.": "데이터 입력(MISO)용 GPIO입니다. 쿼드 버스에서는 IO1입니다. 버스에서 아무것도 읽지 않으면 -1입니다.",
+    "GPIO carrying data out (MOSI); IO0 on a quad bus.": "데이터 출력(MOSI)용 GPIO입니다. 쿼드 버스에서는 IO0입니다.",
+    "GPIO carrying the clock (SCK). Shared by every device on this bus.": "클럭(SCK)용 GPIO입니다. 이 버스의 모든 장치가 공유합니다.",
+    "IO2, for a quad bus (an AMOLED panel over QSPI). -1 on an ordinary SPI bus.": "쿼드 버스용 IO2입니다 (QSPI로 연결된 AMOLED 패널 등). 일반 SPI 버스에서는 -1입니다.",
+    "IO3, for a quad bus. -1 on an ordinary SPI bus.": "쿼드 버스용 IO3입니다. 일반 SPI 버스에서는 -1입니다.",
+    "Io 2 Pin": "IO2 핀",
+    "Io 3 Pin": "IO3 핀",
+    "Max Transfer Bytes": "최대 전송 바이트",
+    "Miso Pin": "MISO 핀",
+    "Mosi Pin": "MOSI 핀",
+    "SPI Bus Component": "SPI 버스 컴포넌트",
+    "Sclk Pin": "SCLK 핀",
+    "Spi Host": "SPI 호스트",
+    "Starts one SPI bus at boot. Every device on that bus (display, SD card, radio) shares it.": "부팅할 때 SPI 버스 하나를 시작합니다. 그 버스의 모든 장치(디스플레이, SD 카드, 무선 모듈)가 이를 공유합니다.",
+    "System": "시스템",
+    "The longest transfer the bus takes in one go. A display sends pixels in transfers this long, so keep it at the chip's limit (32768 on an ESP32-S3) on a bus with a display.": "버스가 한 번에 처리하는 가장 긴 전송입니다. 디스플레이는 이 길이의 전송으로 픽셀을 보내므로, 디스플레이가 있는 버스에서는 칩의 한도(ESP32-S3에서는 32768)로 두십시오.",
+    "Which of the chip's SPI controllers to use, as the platform numbers them. On an ESP32-S3: 1 = SPI2, 2 = SPI3.": "칩의 어떤 SPI 컨트롤러를 사용할지 플랫폼의 번호로 지정합니다. ESP32-S3에서는 1 = SPI2, 2 = SPI3입니다."
+}
