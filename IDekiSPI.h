@@ -35,6 +35,12 @@ struct DeviceConfig
     bool halfDuplex = true;
     /// Transfers that may be queued at once (Queue).
     uint8_t queueDepth = 8;
+    /// Clock for transfers that read, for a device read slower than it is
+    /// written (a display written at 80 MHz and read back at 10). 0: clockHz.
+    uint32_t readClockHz = 0;
+    /// Reads come back on MOSI: a device whose one data line goes both ways
+    /// (a panel's SDA). Half duplex only.
+    bool threeWire = false;
 };
 
 /// One transaction: optional command and address phases on one line, then

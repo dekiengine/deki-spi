@@ -18,3 +18,6 @@ alongside one that has them.
   chip select that can stay asserted into the next transfer; long writes are
   queued for DMA and waited for. A queued transfer of four bytes or less is
   copied, so a command can be queued from the stack.
+- `DeviceConfig::readClockHz`: a device read at a slower clock than it is
+  written (a display written at 80 MHz and read back at 10), and
+  `DeviceConfig::threeWire`, for a device that answers on MOSI.
