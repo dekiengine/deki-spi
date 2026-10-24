@@ -1,0 +1,12 @@
+var NAVTREEINDEX0 =
+{
+"index.html":[],
+"index.html#autotoc_md0":[2,0],
+"index.html#autotoc_md1":[2,1],
+"index.html#autotoc_md2":[2,2],
+"index.html#c-spibuscomponent":[1,0],
+"index.html#changelog":[2],
+"index.html#component-reference":[1],
+"index.html#components":[0],
+"pages.html":[]
+};
