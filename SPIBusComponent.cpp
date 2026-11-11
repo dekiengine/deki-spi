@@ -21,27 +21,30 @@ void SPIBusComponent::Setup(SetupCallback onComplete)
     // nothing, and every device on it would then fail with "no SPI bus".
     if (spiHost < 0 || spiHost >= DekiSPI::kMaxBuses)
     {
-        DEKI_LOG_ERROR("SPIBusComponent: SPI host %d is out of range (0-%d)", (int)spiHost, DekiSPI::kMaxBuses - 1);
+        DEKI_LOG_ERROR("SPIBusComponent: SPI host %d is out of range (0-%d)", static_cast<int>(spiHost),
+                       DekiSPI::kMaxBuses - 1);
         finish(false);
         return;
     }
     if (sclkPin < 0 || (mosiPin < 0 && misoPin < 0))
     {
-        DEKI_LOG_ERROR("SPIBusComponent: host %d needs a clock pin and a data pin", (int)spiHost);
+        DEKI_LOG_ERROR("SPIBusComponent: host %d needs a clock pin and a data pin", static_cast<int>(spiHost));
         finish(false);
         return;
     }
     // Half a quad bus is a wiring mistake, not a bus with two lines.
     if ((io2Pin < 0) != (io3Pin < 0))
     {
-        DEKI_LOG_ERROR("SPIBusComponent: host %d has IO2 or IO3 but not both; a quad bus needs both", (int)spiHost);
+        DEKI_LOG_ERROR("SPIBusComponent: host %d has IO2 or IO3 but not both; a quad bus needs both",
+                       static_cast<int>(spiHost));
         finish(false);
         return;
     }
     IDekiSPIBus* existing = DekiSPI::GetBus(spiHost);
     if (existing && existing != m_Bus)
     {
-        DEKI_LOG_ERROR("SPIBusComponent: SPI host %d is already started by another SPI Bus component", (int)spiHost);
+        DEKI_LOG_ERROR("SPIBusComponent: SPI host %d is already started by another SPI Bus component",
+                       static_cast<int>(spiHost));
         finish(false);
         return;
     }
@@ -77,7 +80,8 @@ void SPIBusComponent::Setup(SetupCallback onComplete)
     }
     else
     {
-        DEKI_LOG_ERROR("SPIBusComponent: Failed to start SPI host %d: %s", (int)spiHost, m_Bus->GetLastError());
+        DEKI_LOG_ERROR("SPIBusComponent: Failed to start SPI host %d: %s", static_cast<int>(spiHost),
+                       m_Bus->GetLastError());
     }
     finish(success);
 }
